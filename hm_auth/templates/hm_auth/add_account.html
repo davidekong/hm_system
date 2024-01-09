@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add an Account</title>
+        <meta charset="utf-8"/>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'hm_auth/style1.css' %}">
+    </head>
+    <body>
+        <div style="text-align: center; margin-top: 100px;">
+            <h2>Choose an Account Type to Add</h2>
+            <br>
+            <a href="{% url 'add_patient' %}">
+                <button style="padding: 10px 20px;" name="add_patient">Add Patient Account</button>
+            </a>
+            <br><br>
+            <a href="{% url 'add_personnel' %}">
+                <button style="padding: 10px 20px;" name="add_personnel">Add Personnel Account</button>
+            </a>
+        </div>
+    </body>
+</html>
+

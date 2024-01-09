@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Sign Up to TeleMed</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'hm_auth/style1.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@600&family=Lobster&family=Nanum+Myeongjo&family=Playfair+Display:ital,wght@0,400;1,500&family=Quicksand:wght@300;700&family=Space+Mono&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <div class="middle">
+            <div class="middle-header">
+                <h2 class="middle-header-text">Sign Up</h2>
+            </div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" id="username" placeholder="michealscott8537">
+                <input type="email" name="email" id="email" placeholder="someone@example.com">
+                <input type="password" name="password1" id="password1" placeholder="Password">
+                <input type="password" name="password2" id="password2" placeholder="Password Again">
+                <button class="login-submit-button" type="submit"><span>S I G N  U P</span></button>
+            </form>
+            <div class="error-message">
+                <span>{{ error_message }}</span>
+            </div>
+            <div class="note">
+                <span>{{ note }}</span>
+            </div>
+        </div> 
+    </body>
+</html>

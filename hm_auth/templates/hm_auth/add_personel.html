@@ -1,0 +1,46 @@
+<!-- Add an Personnel HTML Form -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add an Personnel</title>
+        <meta charset="utf-8"/>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'hm_auth/style1.css' %}">
+    </head>
+    <body>
+        <h2>Hospital Personnel Information Form</h2>
+        <form method="post">
+        {% csrf_token %}
+
+        <!-- User Information -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+
+        <!-- Hospital Information -->
+        <label for="hospital">Hospital:</label>
+        <select id="hospital" name="hospital" required>
+        {# Assuming you have a variable 'hospitals' containing available hospitals #}
+        {% for hospital in hospitals %}
+        <option value="{{ hospital.id }}">{{ hospital.name }}</option>
+        {% endfor %}
+        </select>
+        <br>
+
+        <!-- Role Dropdown -->
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+            <option value="Doctor">Doctor</option>
+            <option value="Nurse">Nurse</option>
+            <option value="Lab Technician">Lab Technician</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br>
+
+        <!-- Add more fields as needed -->
+
+        <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

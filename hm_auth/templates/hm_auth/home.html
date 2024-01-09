@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8"/>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'hm_auth/style1.css' %}">
+    </head>
+    <body>
+        <div class="test-note">
+            Welcome to the home page!
+        </div>
+    </body>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .test-note {
+            font-size: 24px; /* Adjust the font size as needed */
+            text-align: center;
+            border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+            padding: 20px; /* Optional: Add padding for better visual appeal */
+        }
+    </style>
+</html>
