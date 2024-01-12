@@ -1,0 +1,42 @@
+<!-- Updated Add Account HTML Form -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add an Account</title>
+        <meta charset="utf-8"/>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'hm_auth/style1.css' %}">
+    </head>
+    <body>
+        <h2>Choose an Account Type to Add or Join</h2>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="{% url 'add_patient' %}">
+                <button style="padding: 10px 20px;">Add Patient Account</button>
+            </a>
+            <br><br>
+    
+            {% if is_associated %}
+    
+                <!-- Display info for associated user -->
+                <a href="{% url 'home' %}">
+                    <button>
+                        <h3>Hospital: {{ hospitals.0.name }}</h3>  <!-- Assuming the user is associated with the first hospital in the list -->
+                        <p>First Name: {{ user.first_name }}</p>
+                        <p>Role: {{ personnel.role }}</p>
+                    </button>
+                </a>
+            {% else %}
+                <!-- Display options for non-associated user -->
+                <a href="{% url 'join_hospital' %}">
+                    <button style="padding: 10px 20px;">Join Hospital</button>
+                </a>
+                <br><br>
+                <a href="{% url 'add_hospital' %}">
+                    <button style="padding: 10px 20px;">Add Hospital</button>
+                </a>
+            {% endif %}
+
+        </div>
+    </body>
+</html>

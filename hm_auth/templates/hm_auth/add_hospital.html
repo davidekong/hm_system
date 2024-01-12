@@ -1,0 +1,84 @@
+<!-- hospital_form.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Hospital</title>
+        <meta charset="utf-8"/>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'hm_auth/style1.css' %}">
+    </head>
+    <body>
+        <h2>Hospital Information Form</h2>
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Hospital Name -->
+        <label for="name">Hospital Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <!-- Hospital Address -->
+        <label for="address">Hospital Address:</label>
+        <textarea id="address" name="address" required></textarea>
+        <br>
+
+        <!-- Hospital Admin (Hidden Field) -->
+        <input type="hidden" id="admin" name="admin" value="{{ request.user.id }}">
+
+        <!-- License Data -->
+        <label for="license_data">Has Licensed Data for Research:</label>
+        <input type="checkbox" id="license_data" name="license_data">
+        <br>
+
+        <!-- Phone Number -->
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+        <br>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br>
+
+        <!-- Website -->
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website">
+        <br>
+
+        <!-- Established Date -->
+        <label for="established_date">Established Date:</label>
+        <input type="date" id="established_date" name="established_date">
+        <br>
+
+        <!-- Description -->
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea>
+        <br>
+
+        <!-- Services -->
+        <label for="services">Services:</label>
+        <textarea id="services" name="services"></textarea>
+        <br>
+
+        <!-- Specialties -->
+        <label for="specialties">Specialties:</label>
+        <textarea id="specialties" name="specialties"></textarea>
+        <br>
+
+        <!-- Accreditation -->
+        <label for="accreditation">Accreditation:</label>
+        <input type="text" id="accreditation" name="accreditation">
+        <br>
+
+        <!-- Hospital Image Upload -->
+        <label for="image">Hospital Image:</label>
+        <input type="file" id="image" name="image">
+        <br>
+
+        <!-- Add more fields as needed -->
+
+        <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

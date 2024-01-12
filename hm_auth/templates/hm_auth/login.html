@@ -11,20 +11,11 @@
     </head>
     
     <body>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <div class="middle">
-            <div class="middle-header">
-                <h2 class="middle-header-text">Sign Up</h2>
-            </div>
             <form action="" method="post">
                 {% csrf_token %}
-                <input type="text" name="first_name" id="first_name" placeholder="Micheal">
-                <input type="text" name="last_name" id="last_name" placeholder="Scott">
                 <input type="email" name="email" id="email" placeholder="someone@example.com">
-                <input type="password" name="password1" id="password1" placeholder="Password">
-                <input type="password" name="password2" id="password2" placeholder="Password Again">
-                <button class="login-submit-button" type="submit"><span>S I G N  U P</span></button>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <button class="login-submit-button" type="submit"><span>L O G I N</span></button>
             </form>
             <div class="error-message">
                 <span>{{ error_message }}</span>
@@ -32,6 +23,6 @@
             <div class="note">
                 <span>{{ note }}</span>
             </div>
-        </div> 
+            
+        </div>
     </body>
-</html>
